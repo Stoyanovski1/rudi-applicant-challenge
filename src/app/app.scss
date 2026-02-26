@@ -1,0 +1,59 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.app-header {
+  background: #1976d2;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+
+  h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+}
+
+.stepper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  gap: 0.5rem;
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.step {
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  color: #666;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+
+  &:hover {
+    background: #e3f2fd;
+    color: #1976d2;
+  }
+
+  &.active {
+    background: #1976d2;
+    color: white;
+  }
+}
+
+.step-divider {
+  width: 2rem;
+  height: 1px;
+  background: #e0e0e0;
+}
+
+.main-content {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}

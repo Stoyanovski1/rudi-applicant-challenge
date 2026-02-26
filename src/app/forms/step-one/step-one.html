@@ -1,0 +1,37 @@
+<div class="task-info">
+  <h2>Challenge: Multi-Step Form Wizard</h2>
+
+  <p class="task-intro">
+    Build a two-step form wizard that collects user information across separate routes
+    and displays the results on a summary page.
+  </p>
+
+  <h3>Step 1 &ndash; Personal Information (<code>/step-1</code>)</h3>
+  <p>Collect the user's first name, last name, and email address.</p>
+
+  <h3>Step 2 &ndash; Address (<code>/step-2</code>)</h3>
+  <p>
+    Collect the user's mailing address: street, city, zip code, and country.
+    If the user selects <strong>"Other"</strong> as their country, display an additional
+    free-text field where they can type in their country name.
+  </p>
+
+  <h3>Summary (<code>/summary</code>)</h3>
+  <p>
+    Display all collected data. Each section should have an <strong>Edit</strong> button
+    that navigates back to the corresponding step. Provide a <strong>Start Over</strong>
+    button that clears all data and returns to Step 1.
+  </p>
+
+  <h3>Acceptance Criteria</h3>
+  <ul class="acceptance-criteria">
+    <li>Form values <strong>must persist</strong> when navigating back and forth between steps</li>
+    <li>Use Angular <strong>Reactive Forms</strong></li>
+    <li>All fields are required; validate and show error messages appropriately</li>
+    <li>The email field must be validated as a proper email address</li>
+    <li>Navigation to the next step is only allowed when the current form is valid</li>
+    <li><strong>Route guards:</strong> the user must not be able to navigate to <code>/step-2</code>
+      without completing Step 1, or to <code>/summary</code> without completing both steps</li>
+    <li>The summary page must display all collected data from both steps</li>
+  </ul>
+</div>
