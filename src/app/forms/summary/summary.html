@@ -1,4 +1,27 @@
-<div class="step-placeholder">
-  <h2>Summary</h2>
-  <p>Display the collected form data here.</p>
+<div class="summaryDiv">
+  <h2 class="headingSummary">Summary</h2>
+
+  <div class="stepOne">
+    <h3>Personal Information</h3>
+    <p><strong>First Name:</strong> {{ stepOneData?.firstName }}</p>
+    <p><strong>Last Name:</strong> {{ stepOneData?.lastName }}</p>
+    <p><strong>Email:</strong> {{ stepOneData?.email }}</p>
+    <button type="button" (click)="editStepOne()">Edit Step 1</button>
+  </div>
+
+  <div class="stepTwo">
+    <h3>Address</h3>
+    <p><strong>Street:</strong> {{ stepTwoData?.street }}</p>
+    <p><strong>City:</strong> {{ stepTwoData?.city }}</p>
+    <p><strong>Zip:</strong> {{ stepTwoData?.zip }}</p>
+    <p><strong>Country:</strong> {{ stepTwoData?.country }}</p>
+  
+  
+    <p *ngIf="stepTwoData?.country === 'Other'">
+      <strong>Other Country:</strong> {{ stepTwoData?.otherCountry }}
+    </p>
+
+    <button type="button" (click)="editStepTwo()" class="marginRight">Edit Step 2</button>
+    <button type="button" (click)="startOver()">Start Over</button>
+  </div>
 </div>

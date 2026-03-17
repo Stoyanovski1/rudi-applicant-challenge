@@ -1,4 +1,4 @@
-<div class="task-info">
+<!-- <div class="task-info">
   <h2>Challenge: Multi-Step Form Wizard</h2>
 
   <p class="task-intro">
@@ -34,4 +34,38 @@
       without completing Step 1, or to <code>/summary</code> without completing both steps</li>
     <li>The summary page must display all collected data from both steps</li>
   </ul>
+</div> -->
+
+<div class="stepOneForm">
+  <h2 class="textCenter">Personal Information</h2>
+  <form [formGroup]="form">
+
+  <div class="nameDiv">
+    <label class="paddingRight">First Name <div class="redStar">*</div></label>
+    <input formControlName="firstName"> <br>
+    <div *ngIf="form.get('firstName')?.touched && form.get('firstName')?.invalid" class="fehlerMeldung">
+      (First name is required)
+    </div>
+    <br>
+
+    <label class="paddingRight">Last Name <div class="redStar">*</div></label>
+    <input formControlName="lastName"> <br>
+    <div *ngIf="form.get('lastName')?.touched && form.get('lastName')?.invalid" class="fehlerMeldung">
+      (Last Name is required)
+    </div>
+    <br>
+  </div>
+
+  <label class="paddingRight">Email <div class="redStar">*</div></label>
+  <input formControlName="email" class="emailInput" type="email"> <br>
+  <div *ngIf="form.get('email')?.touched && form.get('email')?.invalid" class="fehlerMeldung">
+    (Email is required)
+  </div>
+  <br>
+
+  <button type="button" (click)="next()" [disabled]="form.invalid">
+    Next
+  </button>
+
+  </form>
 </div>

@@ -1,4 +1,54 @@
-<div class="step-placeholder">
-  <h2>Step 2: Address</h2>
-  <p>Implement the address form here.</p>
+<div class="stepTwoForm">
+  <h2 class="textCenter">Address</h2>
+  <form [formGroup]="form">
+
+  <label class="paddingRight">Street <div class="redStar">*</div></label>
+  <input formControlName="street"> <br>
+  <div *ngIf="form.get('street')?.touched && form.get('street')?.invalid" class="fehlerMeldung">
+    (Street is required)
+  </div>
+  <br>
+
+  <label class="paddingRight">City <div class="redStar">*</div></label>
+  <input formControlName="city"> <br>
+  <div *ngIf="form.get('city')?.touched && form.get('city')?.invalid" class="fehlerMeldung">
+    (City is required)
+  </div>
+  <br>
+
+  <label class="paddingRight">Zip Code <div class="redStar">*</div></label>
+  <input formControlName="zip"> <br>
+  <div *ngIf="form.get('zip')?.touched && form.get('zip')?.invalid" class="fehlerMeldung">
+    (Zip is required)
+  </div>
+  <br>
+
+  <label class="paddingRight">Country <div class="redStar">*</div></label>
+  <select formControlName="country">
+    <option value="">Select country</option>
+    <option *ngFor="let country of countries" [value]="country">
+      {{ country }}
+    </option>
+  </select> <br> <br>
+
+  <div *ngIf="form.get('country')?.value === 'Other'">
+      <label class="paddingRight">Other Country <div class="redStar">*</div></label>
+      <input formControlName="otherCountry">
+  </div> <br>
+  <div *ngIf="form.get('otherCountry')?.touched && form.get('otherCountry')?.invalid" class="fehlerMeldung">
+    (Other Country is required)
+  </div>
+  <br>
+
+  <div class="buttonDiv">
+    <button type="button" class="buttonMarginRight" (click)="back()">
+    Back
+    </button>
+
+    <button type="button" (click)="next()" [disabled]="form.invalid">
+    Next
+    </button>
+  </div>
+
+  </form>
 </div>
