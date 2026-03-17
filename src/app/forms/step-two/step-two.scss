@@ -1,10 +1,3 @@
-.paddingRight{
-    padding-right: 10px;
-    display: flex;
-}
-.fehlerMeldung{
-    color: red; font-size: 15px;
-}
 .stepTwoForm{
     border: 1px solid gray;
     padding: 20px;
@@ -12,17 +5,24 @@
     border-radius: 25px;
     width: fit-content;
     margin: 0 auto;
-}
-.textCenter{
-    text-align: center;
-}
-.redStar{
-    color: red;
-}
-.buttonMarginRight{
-    margin-right: 10px;
-}
-.buttonDiv{
-    display: flex;
-    justify-content: center;
+    .paddingRight{
+        padding-right: 10px;
+        display: flex;
+    }
+    .textCenter{
+        text-align: center;
+    }
+    .fehlerMeldung{
+        color: red; font-size: 15px;
+    }
+    .redStar{
+        color: red;
+    }
+    .buttonMarginRight{
+        margin-right: 10px;
+    }
+    .buttonDiv{
+        display: flex;
+        justify-content: center;
+    }
 }
